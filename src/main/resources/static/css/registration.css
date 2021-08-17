@@ -1,0 +1,46 @@
+body{
+    background-color: rgb(255, 255, 255);
+    color: #8b919f !important;
+    font-family: 'Roboto', sans-serif !important;
+}
+button{
+    background-color: #f72d2d !important;
+    color: #fdf3f4 !important;
+}
+.container{
+    padding: 10% 20% 0 20%;
+}
+#profile-photo{
+    display: none !important;
+}
+.upload-photo-style{
+    text-align: center;
+    font-size: 13px;
+}
+.upload-photo-style > label > span > img{
+    padding-bottom: 14px;
+    filter: opacity(0.7);
+}
+.margin-top-14px{
+    margin-top: 14px;
+}
+button:hover {
+    background-color: #ff3737de !important;
+}
+button:focus{
+    background-color: #f72d2d !important;
+}
+.margin-top-25px{
+    margin-top: 25px;
+}
+.previously-registered{
+    text-align: center;
+    margin-top: 15px;
+    font-size: 13px;
+}
+a{
+    color: #f72d2d;
+}
+a:hover{
+    color: #8b919f;
+}

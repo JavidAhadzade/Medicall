@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="az">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="login.css">
+  <link rel="shortcut icon" type="png/image" href="">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+  <title>Medicall</title>
+</head>
+<body>
+<article>
+  <div class="container">
+    <h1>Sizi yenidən görməyə şadıq.</h1>
+    <div class="registration-form">
+      <form action="@{/login}" method="post" enctype="multipart/form-data">
+        <div class="upload-photo-style">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">E-MAİL</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="E-mail" required>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">ŞİFRƏ</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Şifrə" required>
+        </div>
+        <button type="submit" class="btn btn-default btn-lg btn-block margin-top-25px">Daxil ol</button>
+        <div class="previously-registered">
+          <p>Medicall-da yenisiniz? <a th:href="@{/signUp}">Qeydiyyatdan keç</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+</article>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

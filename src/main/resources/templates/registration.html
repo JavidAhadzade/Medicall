@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/static/css/registration.css}" type="text/css">
+    <link rel="shortcut icon" type="png/image" href="">
+    <script src="https://kit.fontawesome.com/44a5bc4613.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap" rel="stylesheet">
+    <title th:text="${title}">Qeydiyyat</title>
+</head>
+<body>
+<article>
+    <div class="container">
+        <div class="registration-form">
+            <form th:action="@{/signUp}" th:object="${doctor}" method="post" enctype="utf8">
+                <div class="alert alert-danger" role="alert" style="color: red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">No error</div>
+                <div class="alert alert-danger" role="alert" style="color: red" th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}">No error</div>
+                <div class="alert alert-danger" role="alert" style="color: red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">No error</div>
+                <div class="alert alert-danger" role="alert" style="color: red" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">No error</div>
+                <div class="upload-photo-style">
+                    <input type="file" name="profile-photo" id="profile-photo" accept="image/*">
+                    <label for="profile-photo"><span><img src="/static/icon/user-circle-regular.svg" alt=""></span>Profil şəkli seç</label>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Ad</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1"name="name" th:field="*{name}" placeholder="Ad" required>
+                    <div class="alert alert-warning" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Soyad</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1"name="surname" th:field="*{surname}" placeholder="Soyad" required>
+                    <div class="alert alert-warning" th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}"></div>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">E-mail </label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" name="email" th:field="*{email}"placeholder="E-mail" required>
+                    <div class="alert alert-warning" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Parol</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" name="parol" th:field="*{password}" placeholder="Parol" required>
+                    <div class="alert alert-warning" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
+                </div>
+                <button type="submit" class="btn btn-default btn-lg btn-block">Qeydiyyatdan keç</button>
+                <div class="previously-registered">
+                    <p>Qeydiyyatdan keçmisiniz? <a href="login.html">Daxil ol</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</article>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
